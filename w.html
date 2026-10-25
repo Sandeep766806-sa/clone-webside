@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ShopSmart - modern online product catalog">
+  <title>ShopSmart | E-commerce Store</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <a href="#home" class="logo">Shop<span>Smart</span></a>
+
+    <nav aria-label="Main navigation">
+      <a href="#home">Home</a>
+      <a href="#products">Products</a>
+      <a href="#about">About</a>
+    </nav>
+
+    <button class="cart-button" id="cart-toggle" type="button">
+      🛒 Cart (<span id="cart-count">0</span>)
+    </button>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <p class="eyebrow">SMART SHOPPING STARTS HERE</p>
+        <h1>Discover Products<br>You'll <span>Love.</span></h1>
+        <p>Explore quality tech, fashion, and lifestyle essentials at great prices.</p>
+        <a class="btn" href="#products">Explore Products →</a>
+      </div>
+      <img
+        src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80"
+        alt="Wireless headphones"
+        fetchpriority="high"
+      >
+    </section>
+
+    <section class="products-section" id="products">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">OUR COLLECTION</p>
+          <h2>Featured Products</h2>
+        </div>
+        <p id="result-count" aria-live="polite"></p>
+      </div>
+
+      <div class="filters">
+        <input
+          type="search"
+          id="search"
+          placeholder="Search products..."
+          aria-label="Search products"
+        >
+
+        <select id="category" aria-label="Filter by category">
+          <option value="all">All Categories</option>
+          <option value="Audio">Audio</option>
+          <option value="Fashion">Fashion</option>
+          <option value="Tech">Technology</option>
+          <option value="Lifestyle">Lifestyle</option>
+          <option value="Accessories">Accessories</option>
+        </select>
+
+        <select id="sort" aria-label="Sort products">
+          <option value="default">Featured</option>
+          <option value="low">Price: Low to High</option>
+          <option value="high">Price: High to Low</option>
+          <option value="name">Name: A to Z</option>
+        </select>
+      </div>
+
+      <div class="product-grid" id="product-grid"></div>
+      <p class="empty-message" id="empty-message" hidden>
+        No products found. Try another search.
+      </p>
+    </section>
+
+    <section class="about" id="about">
+      <p class="eyebrow">ABOUT SHOPSMART</p>
+      <h2>Shopping made simple.</h2>
+      <p>
+        ShopSmart is a web development capstone project demonstrating
+        responsive design, JavaScript interactions, product filtering,
+        cart management, and client-side navigation.
+      </p>
+      <p class="notice">
+        Student demo only. No real payments or orders are processed.
+      </p>
+    </section>
+  </main>
+
+  <aside class="cart-panel" id="cart-panel" hidden>
+    <div class="cart-heading">
+      <h2>Your Shopping Cart</h2>
+      <button id="close-cart" class="close-button" aria-label="Close cart">×</button>
+    </div>
+
+    <div id="cart-items"></div>
+
+    <div class="cart-summary">
+      <p>Subtotal: <strong id="cart-total">₹0</strong></p>
+      <button class="btn checkout" id="checkout">Demo Checkout</button>
+      <button class="clear-button" id="clear-cart">Clear Cart</button>
+    </div>
+  </aside>
+
+  <footer>
+    <p>© <span id="year"></span> ShopSmart | Web Development Capstone</p>
+    <p>Built with HTML5, CSS3 and JavaScript</p>
+  </footer>
+</body>
+</html>
